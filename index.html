@@ -45,7 +45,7 @@
           <li><a href="#sobre-mim">Sobre mim</a></li>
           <li><a href="#formacao-academica">Formação acadêmica</a></li>
           <li><a href="#experiencia-profissional">Experiência profissional</a></li>
-          <li><a href="#">Contato</a></li>
+          <li><a href="#rodape">Contato</a></li>
         </ul>
       </nav>
     </div>
@@ -170,7 +170,7 @@
       </div>
       </section>
     </main>
-    <footer class="rodape">
+    <footer id="rodape" class="rodape">
       <div class="rodape-conteudo">
         <div class="rodape-contato">
           <p><strong>Telefone:</strong> (47) 99649-5685</p>
@@ -205,10 +205,19 @@
   <script>
     const menuToggle = document.querySelector('.menu-toggle');
     const mainMenu = document.querySelector('#main-menu');
+    const contatoLink = document.querySelector('a[href="#rodape"]');
+    const rodape = document.querySelector('#rodape');
 
     if (menuToggle && mainMenu) {
       menuToggle.addEventListener('click', () => {
         const isOpen = mainMenu.classList.toggle('is-open');        menuToggle.classList.toggle('is-active', isOpen);        menuToggle.setAttribute('aria-expanded', String(isOpen));
+      });
+    }
+
+    if (contatoLink && rodape) {
+      contatoLink.addEventListener('click', event => {
+        event.preventDefault();
+        rodape.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     }
   </script>
