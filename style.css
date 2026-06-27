@@ -259,14 +259,19 @@ body {
 
 .sobre-mim-conteudo {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: minmax(0, 220px) 1fr;
   gap: 18px;
   align-items: center;
 }
 
-.sobre-mim-imagem img {
+.sobre-mim-imagem {
   width: 100%;
   max-width: 220px;
+}
+
+.sobre-mim-imagem img {
+  width: 100%;
+  height: auto;
   border-radius: 14px;
   object-fit: cover;
   display: block;
@@ -277,13 +282,32 @@ body {
 }
 
 @media screen and (max-width: 800px) {
-  .sobre-mim-conteudo {
-    grid-template-columns: 1fr;
+  .card {
+    padding: 12px;
   }
 
-  .sobre-mim-imagem img {
+  .sobre-mim-card {
+    padding: 10px 0;
+  }
+
+  .sobre-mim-conteudo {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .sobre-mim-imagem {
     max-width: 100%;
     margin: 0 auto;
+  }
+
+  .sobre-mim-texto p {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+  }
+
+  .secao-formacao h2,
+  .secao-experiencia h2 {
+    font-size: 1.1rem;
   }
 }
 
